@@ -56,7 +56,8 @@ class TestRoom < Minitest::Test
   end
 
   def test_adding_song_to_room
-    
+    @room1.add_song_to_playlist(@song1)
+    assert_equal(1, @room1.playlist.count)
   end
 
   # def test_search_song_by_title
