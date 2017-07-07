@@ -3,8 +3,6 @@ require 'minitest/rg'
 require 'pry'
 
 require_relative '../room.rb'
-require_relative '../guest.rb'
-require_relative '../song.rb'
 
 class TestRoom < Minitest::Test
 
