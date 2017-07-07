@@ -1,5 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/rg'
+require 'pry'
 
 require_relative '../room.rb'
 require_relative '../guest.rb'
@@ -47,6 +48,16 @@ class TestRoom < Minitest::Test
     assert_equal("Sorry buddy, rooms full", result)
   end
 
+  def test_remove_guest_from_room
+    @room1.add_guest_to_room(@guest1)
+    @room1.add_guest_to_room(@guest2)
+    @room1.remove_guest_from_room(@guest2)
+    assert_equal(1, @room1.people.count)
+  end
+
+  def test_adding_song_to_room
+    
+  end
 
   # def test_search_song_by_title
   #   @room1.add_song_to_room(@song1)
