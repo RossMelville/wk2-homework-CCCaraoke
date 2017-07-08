@@ -38,7 +38,10 @@ class TestBar < Minitest::Test
   end
 
   def test_add_person_to_bar__capacity_full
-
+    @bar.add_person_to_bar(@guest1)
+    @bar.add_person_to_bar(@guest2)
+    result = @bar.add_person_to_bar(@guest3)
+    assert_equal("Sorry buddy, the bars full", result)
   end
 
 
