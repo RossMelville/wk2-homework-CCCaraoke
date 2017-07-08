@@ -19,6 +19,12 @@ class TestBar < Minitest::Test
     @guest2 = Guest.new("Drew", 200, "One", "Metallica")
     @guest3 = Guest.new("Stephen", 2, "Love is the Law", "Seahorses")
     @guest4 = Guest.new("Gary", 500, "Waterfall", "Stone Roses")
+    
+    @drink1 = Drink.new("Beer", 2.50)
+    @drink2 = Drink.new("Wine", 3.00)
+    @drink3 = Drink.new("Cocktail", 5.00)
+
+
   end
 
   def test_drinks_list
@@ -49,5 +55,10 @@ class TestBar < Minitest::Test
     assert_equal(1, @bar.tabs.count)
   end
 
+  def test_add_drink_to_persons_tab
+    @bar.add_tab(@guest1)
+    @bar.add_drink_to_tab(@guest1, "Beer")
+    assert_equal("Beer", @bar.tabs())
+  end
 
 end
