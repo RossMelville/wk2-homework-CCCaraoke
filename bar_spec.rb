@@ -44,5 +44,10 @@ class TestBar < Minitest::Test
     assert_equal("Sorry buddy, the bars full", result)
   end
 
+  def test_add_a_tab_for_a_guest
+    @bar.add_tab(@guest1)
+    assert_equal(1, @bar.tabs.count)
+  end
+
 
 end
