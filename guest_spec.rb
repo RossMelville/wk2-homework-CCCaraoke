@@ -11,6 +11,10 @@ class TestGuest < Minitest::Test
     @guest3 = Guest.new("Stephen", 2, "Love is the Law", "Seahorses")
     @guest4 = Guest.new("Gary", 500, "Waterfall", "Stone Roses")
 
+    @drink1 = Drink.new("Beer", 2.50)
+    @drink2 = Drink.new("Wine", 3.00)
+    @drink3 = Drink.new("Cocktail", 5.00)
+
   end 
 
   def test_return_guest_name
@@ -30,6 +34,10 @@ class TestGuest < Minitest::Test
     assert_equal("Sorry you don't have enough funds", @guest3.pay_money(10))
   end
 
+  def test_add_drink_to_tab
+    @guest1.add_drink_to_tab(@drink1)
+    assert_equal(2.5, @guest1.tab)
+  end
 
 
 end

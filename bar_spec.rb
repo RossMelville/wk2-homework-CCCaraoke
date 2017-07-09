@@ -27,9 +27,9 @@ class TestBar < Minitest::Test
 
   end
 
-  def test_drinks_list
-    result = @bar.drinks
-    assert_equal(3, result.count)
+  def test_add_drink_to_bar
+    @bar.add_drink_to_bar(@drink1)
+    assert_equal(1, @bar.drinks.count)
   end
 
   def test_add_song_to_bar
@@ -50,15 +50,15 @@ class TestBar < Minitest::Test
     assert_equal("Sorry buddy, the bars full", result)
   end
 
-  def test_add_a_tab_for_a_guest
-    @bar.add_tab(@guest1)
-    assert_equal(1, @bar.tabs.count)
-  end
+  # def test_add_a_tab_for_a_guest
+  #   @bar.add_tab(@guest1)
+  #   assert_equal(1, @bar.tabs.count)
+  # end
 
-  def test_add_drink_to_persons_tab
-    @bar.add_tab(@guest1)
-    @bar.add_drink_to_tab(@guest1, "Beer")
-    assert_equal("Beer", @bar.tabs())
-  end
+  # def test_add_drink_to_persons_tab
+  #   @bar.add_tab(@guest1)
+  #   @bar.add_drink_to_tab(@guest1, @drink1)
+  #   assert_equal("Beer", @bar.tabs)
+  # end
 
 end
